@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.DependencyInjection;
+using linqu.profileservice.Interfaces;
+using linqu.profileservice.Services;
 
-namespace linqu_backend
+namespace linqu.profileservice
 {
     public class Startup
     {
@@ -25,6 +21,9 @@ namespace linqu_backend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            //dependency injection
+            services.AddTransient<IProfileService, ProfileService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
