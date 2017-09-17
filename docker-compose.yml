@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  linqu-backend:
+    image: linqu-backend
+    build:
+      context: ./linqu-backend
+      dockerfile: Dockerfile
