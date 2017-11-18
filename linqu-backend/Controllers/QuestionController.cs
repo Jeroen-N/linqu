@@ -7,5 +7,6 @@ namespace linqu.profileservice.Controllers
 {
     public class QuestionController
     {
+
     }
 }
