@@ -24,6 +24,7 @@ namespace linqu.profileservice
 
             //dependency injection
             services.AddTransient<IProfileService, ProfileService>();
+            services.AddTransient<IQuestionService, QuestionService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
