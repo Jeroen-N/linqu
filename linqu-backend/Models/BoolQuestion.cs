@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace linqu.profileservice.Models
 {
-    public class BoolQuestion : BaseQuestion
+    public class BoolQuestion : Question
     {
         public string LabelTrue { get; set; }
         public string LabelFalse { get; set; }

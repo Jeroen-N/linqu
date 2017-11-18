@@ -7,7 +7,6 @@ namespace linqu.profileservice.Models
 {
     public class ListAnswer : Answer
     {
-        public Guid ListAnswerID { get; set; }
 
     }
 }

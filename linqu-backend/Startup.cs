@@ -4,7 +4,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using linqu.profileservice.Interfaces;
 using linqu.profileservice.Services;
-using linqu.profileservice.Repositories;
+using Microsoft.EntityFrameworkCore;
+using linqu.profileservice.Infrastructure;
 
 namespace linqu.profileservice
 {
@@ -26,9 +27,12 @@ namespace linqu.profileservice
             //dependency injection
             services.AddTransient<IProfileService, ProfileService>();
             services.AddTransient<IQuestionService, QuestionService>();
-            services.AddTransient<IQuestionRepository, QuestionRepository>();
-            services.AddTransient<IProfileRepository, ProfileRepository>();
             services.AddTransient<IAnswerService, AnswerService>();
+
+            //Database
+            services.AddDbContext<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HT-TP request pipeline.
@@ -40,6 +44,15 @@ namespace linqu.profileservice
             }
 
             app.UseMvc();
+
+            // Create DB using migrations on startup
+            using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+            {
+                serviceScope.ServiceProvider.GetService<Context>().Database.Migrate();
+            }
+
+            //Seed database
+            Seed.SeedDatabase(context);
         }
     }
 }

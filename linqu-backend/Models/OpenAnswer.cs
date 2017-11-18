@@ -7,8 +7,6 @@ namespace linqu.profileservice.Models
 {
     public class OpenAnswer : Answer
     {
-        public Guid OpenAnswerID { get; set; }
-
         public String Value { get; set; }
     }
 }

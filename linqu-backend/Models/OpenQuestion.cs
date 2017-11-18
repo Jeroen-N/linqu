@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace linqu.profileservice.Models
 {
-    public class OpenQuestion : BaseQuestion
+    public class OpenQuestion : Question
     {
         public string MaxInputChars { get; set; }
     }

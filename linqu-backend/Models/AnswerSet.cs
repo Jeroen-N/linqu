@@ -12,5 +12,7 @@ namespace linqu.profileservice.Models
         public bool Completed { get; set; }
 
         public DateTime TimeCompleted { get; set; }
+
+        public ICollection<Answer> Answers { get; set; }
     }
 }

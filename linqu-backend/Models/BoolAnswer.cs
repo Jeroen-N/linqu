@@ -7,7 +7,6 @@ namespace linqu.profileservice.Models
 {
     public class BoolAnswer : Answer
     {
-        public Guid BoolAnswerID { get; set; }
 
         public bool Value { get; set; }
     }
