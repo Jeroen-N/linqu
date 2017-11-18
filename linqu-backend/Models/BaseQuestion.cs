@@ -9,6 +9,10 @@ namespace linqu.profileservice.Models
     {
         public Guid QuestionID { get; set; }
         public string Question { get; set; }
+        public QuestionFor QuestionFor { get; set; }
+        public DateTime DateCreated { get; set; }
 
     }
 }
+
+public enum QuestionFor { Company, Developer }

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using linqu.profileservice.Interfaces;
 using linqu.profileservice.Services;
+using linqu.profileservice.Repositories;
 
 namespace linqu.profileservice
 {
@@ -25,6 +26,8 @@ namespace linqu.profileservice
             //dependency injection
             services.AddTransient<IProfileService, ProfileService>();
             services.AddTransient<IQuestionService, QuestionService>();
+            services.AddTransient<IQuestionRepository, QuestionRepository>();
+            services.AddTransient<IProfileRepository, ProfileRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
