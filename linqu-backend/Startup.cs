@@ -30,7 +30,7 @@ namespace linqu.profileservice
             services.AddTransient<IAnswerService, AnswerService>();
 
             //Database
-            services.AddDbContext<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("Docker")));
 
 
         }
@@ -48,11 +48,10 @@ namespace linqu.profileservice
             // Create DB using migrations on startup
             using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
             {
-                serviceScope.ServiceProvider.GetService<Context>().Database.Migrate();
-            }
+                var context = serviceScope.ServiceProvider.GetService<Context>();
 
-            //Seed database
-            Seed.SeedDatabase(context);
+                context.Database.Migrate();
+            }
         }
     }
 }

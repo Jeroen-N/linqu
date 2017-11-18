@@ -12,7 +12,7 @@ namespace linqu.profileservice.Infrastructure
         private static ICollection<Question> questions = new List<Question>();
         private static ICollection<Answer> answers = new List<Answer>();
         
-        public static async void SeedDatabase(Context context)
+        public static void SeedDatabase(Context context)
         {
             questions.Add(new BoolQuestion { QuestionID = new Guid(), DateCreated = DateTime.Now, LabelFalse = "Nee", LabelTrue="Ja", QuestionFor=QuestionFor.Developer, QuestionPhrased="Testvraag, werkt het?" });
             answers.Add(new BoolAnswer() { AnswerID = new Guid(), AnswerType = AnswerType.BoolAnswer, TimeAnswered = DateTime.Now, Value = true});

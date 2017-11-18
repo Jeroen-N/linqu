@@ -7,6 +7,8 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using linqu.profileservice.Infrastructure;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace linqu.profileservice
 {
@@ -14,7 +16,20 @@ namespace linqu.profileservice
     {
         public static void Main(string[] args)
         {
-            BuildWebHost(args).Run();
+            var host = BuildWebHost(args);
+
+            using (var scope = host.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                try
+                {
+                    var context = services.GetRequiredService<Context>();
+                    //Seed database
+                    Seed.SeedDatabase(context);
+                } catch { }
+            }
+
+            host.Run();
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
