@@ -15,6 +15,12 @@ namespace linqu.profileservice.Services
 
             result.Add(new BoolAnswer() { AnswerID = new Guid(), AnswerType = Models.Enums.AnswerType.BoolAnswer });
 
+            result.Add(new OpenAnswer() { AnswerID = new Guid(), AnswerType = Models.Enums.AnswerType.OpenAnswer });
+
+            result.Add(new ListAnswer() { AnswerID = new Guid(), AnswerType = Models.Enums.AnswerType.ListAnswer });
+
+
+
             return result;
         }
     }
