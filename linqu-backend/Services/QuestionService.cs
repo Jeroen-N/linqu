@@ -1,4 +1,5 @@
-﻿using linqu.profileservice.Interfaces;
+﻿using linqu.profileservice.Infrastructure;
+using linqu.profileservice.Interfaces;
 using linqu.profileservice.Models;
 using System;
 using System.Collections.Generic;
@@ -9,54 +10,68 @@ namespace linqu.profileservice.Services
 {
     public class QuestionService : IQuestionService
     {
-        public bool CreateQuestion(Question question)
+        public Context _context;
+
+        public QuestionService(Context context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public bool CreateQuestionSet(QuestionSet questionSet)
+        public void CreateQuestion(Question question)
         {
-            throw new NotImplementedException();
+            _context.Questions.Add(question);
+            _context.SaveChanges();
         }
 
-        public bool DeleteQuestion(Guid questionID)
+        public void CreateQuestionSet(QuestionSet questionSet)
         {
-            throw new NotImplementedException();
+
+            _context.QuestionSets.Add(questionSet);
+            _context.SaveChanges();
         }
 
-        public bool DeleteQuestionSet(Guid questionSetID)
+        public void DeleteQuestion(Guid questionID)
         {
-            throw new NotImplementedException();
+            _context.Questions.Remove(_context.Questions.Single(x => x.QuestionID == questionID));
+            _context.SaveChanges();
+        }
+
+        public void DeleteQuestionSet(Guid questionSetID)
+        {
+            _context.QuestionSets.Remove(_context.QuestionSets.Single(x => x.QuestionSetID == questionSetID));
+            _context.SaveChanges();
         }
 
         public IEnumerable<Question> GetAllQuestions()
         {
-            return null;
+            return _context.Questions;
         }
 
         public IEnumerable<QuestionSet> GetAllQuestionSets()
         {
-            throw new NotImplementedException();
+            return _context.QuestionSets;
         }
 
         public Question GetQuestion(Guid questionID)
         {
-            throw new NotImplementedException();
+            return _context.Questions.Single(x => x.QuestionID == questionID);
         }
 
         public QuestionSet GetQuestionSet(Guid questionSetID)
         {
-            throw new NotImplementedException();
+            return _context.QuestionSets.Single(x => x.QuestionSetID == questionSetID);
         }
 
-        public bool UpdateQuestion(Question question)
+        public void UpdateQuestion(Question question)
         {
-            throw new NotImplementedException();
+            _context.Questions.Update(question);
+            _context.SaveChanges();
         }
 
-        public bool UpdateQuestionSet(QuestionSet questionSet)
+        public void UpdateQuestionSet(QuestionSet questionSet)
         {
-            throw new NotImplementedException();
+            _context.QuestionSets.Update(questionSet);
+            _context.SaveChanges();
         }
     }
 }

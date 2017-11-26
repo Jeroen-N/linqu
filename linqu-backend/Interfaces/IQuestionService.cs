@@ -15,16 +15,16 @@ namespace linqu.profileservice.Interfaces
         Question GetQuestion(Guid questionID);
 
         //create
-        Boolean CreateQuestion(Question question);
-        Boolean CreateQuestionSet(QuestionSet questionSet);
+        void CreateQuestion(Question question);
+        void CreateQuestionSet(QuestionSet questionSet);
 
         //modify
-        Boolean UpdateQuestion(Question question);
-        Boolean UpdateQuestionSet(QuestionSet questionSet);
+        void UpdateQuestion(Question question);
+        void UpdateQuestionSet(QuestionSet questionSet);
 
         //delete
-        Boolean DeleteQuestion(Guid questionID);
-        Boolean DeleteQuestionSet(Guid questionSetID);
+        void DeleteQuestion(Guid questionID);
+        void DeleteQuestionSet(Guid questionSetID);
 
     }
 }

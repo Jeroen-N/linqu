@@ -13,15 +13,15 @@ namespace linqu.profileservice.Interfaces
         Answer GetAnswer(Guid answerID);
 
         //create
-        Boolean CreateAnswer(Answer answer);
-        Boolean CreateAnswerSet(AnswerSet answerSet);
+        void CreateAnswer(Answer answer);
+        void CreateAnswerSet(AnswerSet answerSet);
 
         //modify
-        Boolean UpdateAnswer(Answer answer);
-        Boolean UpdateAnswerSet(AnswerSet answerSet);
+        void UpdateAnswer(Answer answer);
+        void UpdateAnswerSet(AnswerSet answerSet);
 
         //delete
-        Boolean DeleteAnswer(Guid answerID);
-        Boolean DeleteAnswerSet(Guid answerSetID);
+        void DeleteAnswer(Guid answerID);
+        void DeleteAnswerSet(Guid answerSetID);
     }
 }

@@ -4,67 +4,75 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using linqu.profileservice.Models;
+using linqu.profileservice.Infrastructure;
 
 namespace linqu.profileservice.Services
 {
     public class AnswerService : IAnswerService
     {
-        public bool CreateAnswer(Answer answer)
+
+        public Context _context;
+
+        public AnswerService(Context context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public bool CreateAnswerSet(AnswerSet answerSet)
+        public void CreateAnswer(Answer answer)
         {
-            throw new NotImplementedException();
+            _context.Answers.Add(answer);
+            _context.SaveChanges();
         }
 
-        public bool DeleteAnswer(Guid answerID)
+        public void CreateAnswerSet(AnswerSet answerSet)
         {
-            throw new NotImplementedException();
+
+            _context.AnswerSets.Add(answerSet);
+            _context.SaveChanges();
         }
 
-        public bool DeleteAnswerSet(Guid answerSetID)
+        public void DeleteAnswer(Guid answerID)
         {
-            throw new NotImplementedException();
+            _context.Answers.Remove(_context.Answers.Single(x => x.AnswerID == answerID));
+            _context.SaveChanges();
+        }
+
+        public void DeleteAnswerSet(Guid answerSetID)
+        {
+            _context.AnswerSets.Remove(_context.AnswerSets.Single(x => x.AnswerSetID == answerSetID));
+            _context.SaveChanges();
         }
 
         public IEnumerable<Answer> GetAllAnswers()
         {
-            var result = new List<Answer>();
-
-            result.Add(new BoolAnswer() { AnswerID = new Guid(), AnswerType = Models.Enums.AnswerType.BoolAnswer });
-
-            result.Add(new OpenAnswer() { AnswerID = new Guid(), AnswerType = Models.Enums.AnswerType.OpenAnswer });
-
-            result.Add(new ListAnswer() { AnswerID = new Guid(), AnswerType = Models.Enums.AnswerType.ListAnswer });
-
-            return result;
+            return _context.Answers;
         }
 
         public IEnumerable<AnswerSet> GetAllAnswerSets()
         {
-            throw new NotImplementedException();
+            return _context.AnswerSets;
         }
 
         public Answer GetAnswer(Guid answerID)
         {
-            throw new NotImplementedException();
+            return _context.Answers.Single(x => x.AnswerID == answerID);
         }
 
         public AnswerSet GetAnswerSet(Guid answerSetID)
         {
-            throw new NotImplementedException();
+            return _context.AnswerSets.Single(x => x.AnswerSetID == answerSetID);
         }
 
-        public bool UpdateAnswer(Answer answer)
+        public void UpdateAnswer(Answer answer)
         {
-            throw new NotImplementedException();
+            _context.Answers.Update(answer);
+            _context.SaveChanges();
         }
 
-        public bool UpdateAnswerSet(AnswerSet answerSet)
+        public void UpdateAnswerSet(AnswerSet answerSet)
         {
-            throw new NotImplementedException();
+            _context.AnswerSets.Update(answerSet);
+            _context.SaveChanges();
         }
     }
 }

@@ -12,5 +12,7 @@ namespace linqu.profileservice.Infrastructure
 
         public DbSet<QuestionSet> QuestionSets { get; set; }
         public DbSet<AnswerSet> AnswerSets { get; set; }
+        public DbSet<Answer> Answers { get; set; }
+        public DbSet<Question> Questions { get; set; }
     }
 }
