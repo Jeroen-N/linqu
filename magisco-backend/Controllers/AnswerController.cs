@@ -19,29 +19,39 @@ namespace magisco.profileservice.Controllers
             _answerService = answerService;
         }
 
-        // GET api/values
+        // get all answers
         [HttpGet]
-        public IEnumerable<Answer> GetAnswers()
+        public IEnumerable<Answer> GetAllAnswers()
         {
             return _answerService.GetAllAnswers();
-        }        
-
-        [HttpPost]
-        public void SaveAnswer(Answer answer)
-        {
-
         }
 
-        [HttpPost]
-        public void SaveAnswers(List<Answer> answers)
+        //get a specific answer
+        [HttpGet("{id}", Name = "GetAnswer")]
+        public Answer GetAnswer(string id)
         {
-
+            return _answerService.GetAnswer(new Guid(id));
         }
 
-        [HttpPost]
-        public void SaveAnswerSet(AnswerSet answerSet)
+        //create a answer
+        [HttpPut(Name = "CreateAnswer")]
+        public void CreateAnswer(Answer answer)
         {
+            _answerService.CreateAnswer(answer);
+        }
 
+        //delete a answer
+        [HttpDelete("{id}", Name = "DeleteAnswer")]
+        public void DeleteAnswer(string id)
+        {
+            _answerService.DeleteAnswer(new Guid(id));
+        }
+
+        //update a answer
+        [HttpPost(Name = "CreateAnswer")]
+        public void UpdateAnswer(Answer answer)
+        {
+            _answerService.UpdateAnswer(answer);
         }
     }
 }
