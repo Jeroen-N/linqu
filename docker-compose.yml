@@ -10,10 +10,10 @@ services:
       - "1433:1433"
     volumes:
       - mssql_data:/var/opt/mssql
-  linqu-backend:
-    image: linqu-backend
+  magisco-backend:
+    image: magisco-backend
     build:
-      context: ./linqu-backend
+      context: ./magisco-backend
       dockerfile: Dockerfile
 volumes:
   mssql_data:

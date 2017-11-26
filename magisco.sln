@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{C503873D-7885-4171-8425-36E9BAD5B3B3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "magisco.profileservice", "magisco-backend\magisco.profileservice.csproj", "{05A01A58-9D19-4EC3-8F0A-E91CB95E0190}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{9032C128-D57C-4665-8B2D-31E4478E01AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{5341D046-C058-4863-9DD6-81BB5D3F34D2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05A01A58-9D19-4EC3-8F0A-E91CB95E0190}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05A01A58-9D19-4EC3-8F0A-E91CB95E0190}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05A01A58-9D19-4EC3-8F0A-E91CB95E0190}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05A01A58-9D19-4EC3-8F0A-E91CB95E0190}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9032C128-D57C-4665-8B2D-31E4478E01AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9032C128-D57C-4665-8B2D-31E4478E01AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9032C128-D57C-4665-8B2D-31E4478E01AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9032C128-D57C-4665-8B2D-31E4478E01AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{05A01A58-9D19-4EC3-8F0A-E91CB95E0190} = {5341D046-C058-4863-9DD6-81BB5D3F34D2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2AFEA6AB-295B-450A-AA3B-0D6249DF7FA6}
+	EndGlobalSection
+EndGlobal

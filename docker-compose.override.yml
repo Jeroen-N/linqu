@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  linqu-backend:
+  magisco-backend:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
