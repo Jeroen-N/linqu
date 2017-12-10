@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace magisco.profileservice.Migrations
+namespace Magisco.Profile.Migrations
 {
     public partial class initial : Migration
     {

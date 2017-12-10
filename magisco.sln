@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.15
+VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{C503873D-7885-4171-8425-36E9BAD5B3B3}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "magisco.profileservice", "magisco-backend\magisco.profileservice.csproj", "{05A01A58-9D19-4EC3-8F0A-E91CB95E0190}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Magisco.Profile", "magisco-backend\Magisco.Profile.csproj", "{05A01A58-9D19-4EC3-8F0A-E91CB95E0190}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{9032C128-D57C-4665-8B2D-31E4478E01AE}"
 EndProject

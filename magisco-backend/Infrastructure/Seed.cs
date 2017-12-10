@@ -1,11 +1,11 @@
-﻿using magisco.profileservice.Models;
-using magisco.profileservice.Models.Enums;
+﻿using Magisco.Profile.Models;
+using Magisco.Profile.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace magisco.profileservice.Infrastructure
+namespace Magisco.Profile.Infrastructure
 {
     public static class Seed
     {

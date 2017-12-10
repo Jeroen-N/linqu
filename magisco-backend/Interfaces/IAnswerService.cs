@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using magisco.profileservice.Models;
+using Magisco.Profile.Models;
 using System;
 
-namespace magisco.profileservice.Interfaces
+namespace Magisco.Profile.Interfaces
 {
     public interface IAnswerService
     {

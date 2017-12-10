@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace magisco.profileservice.Models
+namespace Magisco.Profile.Models
 {
     public class BoolQuestion : Question
     {

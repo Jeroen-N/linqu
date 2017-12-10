@@ -1,12 +1,12 @@
-﻿using magisco.profileservice.Interfaces;
-using magisco.profileservice.Models;
+﻿using Magisco.Profile.Interfaces;
+using Magisco.Profile.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace magisco.profileservice.Controllers
+namespace Magisco.Profile.Controllers
 {
     [Route("api/[controller]")]
     public class QuestionSetController

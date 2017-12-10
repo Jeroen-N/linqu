@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using magisco.profileservice.Interfaces;
+using Magisco.Profile.Interfaces;
 
-namespace magisco.profileservice.Controllers
+namespace Magisco.Profile.Controllers
 {
     [Route("api/[controller]")]
     public class ProfileController : Controller

@@ -1,10 +1,10 @@
-﻿using magisco.profileservice.Models;
+﻿using Magisco.Profile.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace magisco.profileservice.Interfaces
+namespace Magisco.Profile.Interfaces
 {
     public interface IQuestionService
     {

@@ -1,8 +1,8 @@
-﻿using magisco.profileservice.Models;
+﻿using Magisco.Profile.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 
-namespace magisco.profileservice.Infrastructure
+namespace Magisco.Profile.Infrastructure
 {
     public class Context : DbContext
     {

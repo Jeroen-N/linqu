@@ -7,10 +7,10 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using magisco.profileservice.Infrastructure;
+using Magisco.Profile.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace magisco.profileservice
+namespace Magisco.Profile
 {
     public class Program
     {

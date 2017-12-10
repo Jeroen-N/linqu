@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using magisco.profileservice.Interfaces;
-using magisco.profileservice.Models;
+using Magisco.Profile.Interfaces;
+using Magisco.Profile.Models;
 
-namespace magisco.profileservice.Controllers
+namespace Magisco.Profile.Controllers
 {
     [Route("api/[controller]")]
     public class QuestionController : Controller

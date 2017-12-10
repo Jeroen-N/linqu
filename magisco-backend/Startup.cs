@@ -2,12 +2,15 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using magisco.profileservice.Interfaces;
-using magisco.profileservice.Services;
+using Magisco.Profile.Interfaces;
+using Magisco.Profile.Services;
 using Microsoft.EntityFrameworkCore;
-using magisco.profileservice.Infrastructure;
+using Magisco.Profile.Infrastructure;
+using Swashbuckle.AspNetCore.Swagger;
+using Microsoft.Extensions.PlatformAbstractions;
+using System.IO;
 
-namespace magisco.profileservice
+namespace Magisco.Profile
 {
     public class Startup
     {
@@ -22,6 +25,7 @@ namespace magisco.profileservice
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddMvc();
 
             //dependency injection
@@ -32,6 +36,16 @@ namespace magisco.profileservice
             //Database
             services.AddDbContext<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("Docker")));
 
+            // Register the Swagger generator, defining one or more Swagger documents
+            // More info/configuration https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?tabs=visual-studio
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
+                // Set the comments path for the Swagger JSON and UI.
+                var basePath = PlatformServices.Default.Application.ApplicationBasePath;
+                var xmlPath = Path.Combine(basePath, "Magisco.Profile.xml");
+                c.IncludeXmlComments(xmlPath);
+            });
 
         }
 
@@ -42,6 +56,15 @@ namespace magisco.profileservice
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
 
             app.UseMvc();
 

@@ -1,12 +1,12 @@
-﻿using magisco.profileservice.Interfaces;
+﻿using Magisco.Profile.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using magisco.profileservice.Models;
-using magisco.profileservice.Infrastructure;
+using Magisco.Profile.Models;
+using Magisco.Profile.Infrastructure;
 
-namespace magisco.profileservice.Services
+namespace Magisco.Profile.Services
 {
     public class AnswerService : IAnswerService
     {
