@@ -9,6 +9,7 @@ using Magisco.Profile.Infrastructure;
 using Swashbuckle.AspNetCore.Swagger;
 using Microsoft.Extensions.PlatformAbstractions;
 using System.IO;
+using System.Diagnostics;
 
 namespace Magisco.Profile
 {
@@ -42,8 +43,11 @@ namespace Magisco.Profile
             {
                 c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
                 // Set the comments path for the Swagger JSON and UI.
+
                 var basePath = PlatformServices.Default.Application.ApplicationBasePath;
-                var xmlPath = Path.Combine(basePath, "Magisco.Profile.xml");
+                Debug.WriteLine(basePath);
+                var xmlPath = Path.Combine(basePath, "Swagger.xml");
+
                 c.IncludeXmlComments(xmlPath);
             });
 
