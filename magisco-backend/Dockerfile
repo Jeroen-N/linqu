@@ -5,10 +5,10 @@ EXPOSE 80
 FROM microsoft/aspnetcore-build:2.0 AS build
 WORKDIR /src
 COPY *.sln ./
-COPY magisco-backend/Magisco.Profile.csproj magisco-backend//
+COPY magisco-backend/Magisco.Profile.csproj magisco-backend/
 RUN dotnet restore
 COPY . .
-WORKDIR magisco-backend/
+WORKDIR /src/magisco-backend/
 RUN dotnet build -c Release -o /app
 
 FROM build AS publish
