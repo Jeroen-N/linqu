@@ -13,7 +13,7 @@ services:
   magisco-backend:
     image: magisco-backend
     build:
-      context: ./magisco-backend
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: magisco-backend/Dockerfile
 volumes:
   mssql_data:
