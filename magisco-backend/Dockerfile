@@ -8,7 +8,7 @@ COPY *.sln ./
 COPY magisco-backend/Magisco.Profile.csproj magisco-backend/
 RUN dotnet restore
 COPY . .
-WORKDIR /src/magisco-backend/
+WORKDIR /src/magisco-backend
 RUN dotnet build -c Release -o /app
 
 FROM build AS publish
