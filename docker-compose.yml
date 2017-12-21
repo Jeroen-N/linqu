@@ -15,5 +15,7 @@ services:
     build:
       context: .
       dockerfile: magisco-backend/Dockerfile
+    depends_on:
+      - database
 volumes:
   mssql_data:
