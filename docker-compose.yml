@@ -1,8 +1,21 @@
 version: '3'
 
 services:
-  linqu-backend:
-    image: linqu-backend
+  database:
+    image: 'microsoft/mssql-server-linux'
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=yourStrong(!)Password
+    ports:
+      - "1433:1433"
+    volumes:
+      - mssql_data:/var/opt/mssql
+  magisco-backend:
+    image: magisco-backend
     build:
-      context: ./linqu-backend
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: magisco-backend/Dockerfile
+    depends_on:
+      - database
+volumes:
+  mssql_data:
