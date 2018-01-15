@@ -9,6 +9,8 @@ namespace Magisco.Profile.Models
     {
         public Guid AnswerSetID { get; set; }
 
+        public Guid QuestionSetID { get; set; }
+
         public bool Completed { get; set; }
 
         public DateTime TimeCompleted { get; set; }

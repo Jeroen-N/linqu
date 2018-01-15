@@ -10,6 +10,8 @@ namespace Magisco.Profile.Models
     {
         public Guid AnswerID { get; set; }
 
+        public Guid QuestionID { get; set; }
+
         public DateTime TimeAnswered { get; set; }
 
         public AnswerType AnswerType { get; set; }

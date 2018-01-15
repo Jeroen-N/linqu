@@ -7,6 +7,6 @@ namespace Magisco.Profile.Models
 {
     public class ListAnswer : Answer
     {
-
+        string ChosenAnswer { get; set; }
     }
 }
